@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input [(ngModel)]="filter" type="text" id="search" name="search" class="form-control">
+  </div>
+</form>
+
+<div class="d-flex justify-content-center gap-5 flex-wrap mt-5">
+  <div *ngFor="let car of cars">
+    <h2>{{car.name}}</h2>
+    <img [src]="car.logo" alt="" height="100px">
+  </div>
+</div>
+

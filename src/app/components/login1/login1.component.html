@@ -1,0 +1,15 @@
+<button *ngIf="isLogin" (click)="isLogin = false">Logout</button>
+
+<form (ngSubmit)="onLogin()" *ngIf="!isLogin">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input [(ngModel)]="credentials.username" type="text" id="username" name="username" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="password">password</label>
+    <input [(ngModel)]="credentials.password" type="password" id="password" name="password" class="form-control">
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="isLogin">Prihlasili jste se</div>

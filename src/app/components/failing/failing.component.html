@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Am I failing my class</h1>
+
+  <div>
+    <div *ngFor="let g of grades; let i = index">
+      <div>Známka: {{g.grade}} | Váha: {{g.weight}}</div>
+      <button (click)="deleteGrade(i)">Delete</button>
+    </div>
+  </div>
+
+  <div>
+    Průměr: {{!averageGrade ? '' : averageGrade}}
+  </div>
+
+  <form (ngSubmit)="addGrade()">
+    <div class="form-group">
+      <label for="grade">Grade</label>
+      <input [(ngModel)]="grade.grade" type="number" id="grade" name="grade" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <input [(ngModel)]="grade.weight" type="number" id="weight" name="weight" class="form-control">
+    </div>
+    <button type="submit">Add</button>
+  </form>
+</div>
